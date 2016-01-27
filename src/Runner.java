@@ -11,15 +11,15 @@ public class Runner extends Applet {
 		setSize(850, 650);
 	}
 
+	//Paint method
 	public void paint(Graphics g) {
 		drawGrid(g);
 		addToArrayList();
-		drawAllShapes(g);
-		drawAllNames(g);
-		drawAllMessages(g);
+		draw(g);
 
 	}
 
+	//Draw Grid
 	public void drawGrid(Graphics g) {
 		g.drawRect(10, 10, 800, 600);
 		g.drawLine(10, 300, 810, 300);
@@ -31,7 +31,7 @@ public class Runner extends Applet {
 		shapes = new ArrayList<Shape>();
 
 		// Adds square to arraylist
-		Shape square = new Shape1Square(125, 100, 125, 20, 30, 100, 280);
+		Shape square = new Shape1Square(125, 100, 125, 20, 30, 125, 280);
 		shapes.add(square);
 
 		// Adds triangle to arraylist
@@ -47,23 +47,15 @@ public class Runner extends Applet {
 		shapes.add(circle);
 	}
 
-	public void drawAllShapes(Graphics g) {
+	//Draws the shape, writes name and writes message
+	public void draw(Graphics g) {
 		for (Shape shape : shapes) {
 			shape.drawShape(g);
-		}
-	}
-
-	public void drawAllNames(Graphics g) {
-		for (Shape shape : shapes) {
 			shape.displayName(g);
-		}
-
-	}
-
-	public void drawAllMessages(Graphics g) {
-		for (Shape shape : shapes) {
 			shape.displayNumSides(g);
+			
 		}
 	}
+
 
 }
