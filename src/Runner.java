@@ -3,6 +3,7 @@ import java.applet.*;
 import java.util.ArrayList;
 
 public class Runner extends Applet {
+	//This tests clone
 
 	// Class variable
 	ArrayList<Shape> shapes;
